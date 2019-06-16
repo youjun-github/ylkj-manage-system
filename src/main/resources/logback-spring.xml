@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/2002/xmlspec/dtd/2.10/xmlspec.dtd">
+<configuration>
+	<include resource="org/springframework/boot/logging/logback/base.xml" />
+	<property name="log.path" value="/data/logs/" />
+	<!-- net.logstash.logback.appender.LogstashTcpSocketAppender -->
+	<appender name="console" class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<File>${log.path}/apps.log</File>
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<FileNamePattern>${log.path}/apps.%d{yyyy-MM-dd}.log</FileNamePattern>
+		</rollingPolicy>
+		<encoder>
+			<charset>UTF-8</charset>
+			<pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} -%5p ${PID:-} [%15.15t] %-40.40logger{39} : %m%n</pattern>
+		</encoder>
+	</appender>
+	<root>
+		<appender-ref ref="console" />
+	</root>
+</configuration>

@@ -1,0 +1,11 @@
+spring:
+  application:
+    name: ylkj-manage-system
+# use the following config for local env
+#  cloud:
+#    config:
+#      uri:
+#      profile: dev
+#      label: master
+#      username: admin
+#      password: admin
