@@ -9,11 +9,6 @@ package com.ylkj.mgt.constant;
 public class Constant {
 
     /**
-     * 日志记录所在主机的hostname
-     */
-    public static String LOGBACK_HOSTNAME = "";
-
-    /**
      * session中存储的登录用户
      */
     public static final String SESSION_USER = "session_user";
