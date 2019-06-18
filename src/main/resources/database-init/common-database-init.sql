@@ -5,7 +5,7 @@ USE ams_common;
 -- 一、表结构创建语句
 -- 用户表
 CREATE TABLE `sys_user` (
-  `id` int(20) NOT NULL COMMENT '主键',
+  `id` int(11) NOT NULL AUTO_INCREMENT COMMENT '主键，自增',
   `login_name` varchar(100) DEFAULT NULL COMMENT '登录名,唯一',
   `password` varchar(100) DEFAULT NULL COMMENT '密码',
   `nick_name` varchar(100) DEFAULT NULL COMMENT '昵称',
@@ -13,9 +13,9 @@ CREATE TABLE `sys_user` (
   `email` varchar(100) DEFAULT NULL COMMENT '邮箱',
   `mobile_phone` varchar(20) DEFAULT NULL COMMENT '手机号',
   `status` int(11) DEFAULT NULL COMMENT '状态,-1-删除、 0-禁用， 1-正常',
-  `creator_id` int(20) DEFAULT NULL COMMENT '创建人，如果是同步的数据，则默认为-1L',
+  `creator_id` int(11) DEFAULT NULL COMMENT '创建人，如果是同步的数据，则默认为-1L',
   `create_time` datetime DEFAULT NULL COMMENT '创建时间',
-  `update_id` int(20) DEFAULT NULL COMMENT '更新人',
+  `update_id` int(11) DEFAULT NULL COMMENT '更新人',
   `update_time` datetime DEFAULT NULL COMMENT '更新时间',
   `remarks` varchar(200) DEFAULT NULL COMMENT '描述',
   PRIMARY KEY (`id`)
