@@ -9,6 +9,7 @@ import com.ylkj.mgt.entity.SysUser;
 import com.ylkj.mgt.service.SysUserService;
 import com.ylkj.mgt.utils.CollectionUtil;
 import com.ylkj.mgt.utils.CommonUtils;
+import com.ylkj.mgt.web.args.LoginArgs;
 import com.ylkj.mgt.web.args.SysUserArgs;
 import com.ylkj.mgt.web.mode.SysUserMode;
 import org.springframework.stereotype.Service;
@@ -27,5 +28,10 @@ public class SysUserServiceImpl extends BaseServiceImpl<SysUser> implements SysU
         Assert.isTrue(userArgs!=null, HttpCode.PARAM_INVALID, "用户参数不能为空");
         Page<SysUser> userPage = select(SysUserArgs.convertEntity(userArgs), userArgs.getPageNum(), userArgs.getPageSize());
         return CollectionUtil.convert(userPage, SysUserMode::entity);
+    }
+
+    @Override
+    public Result<SysUserMode> login(LoginArgs loginArgs) {
+        return null;
     }
 }

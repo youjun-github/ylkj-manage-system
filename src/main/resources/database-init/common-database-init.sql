@@ -21,6 +21,27 @@ CREATE TABLE `sys_user` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='用户表';
 
+CREATE TABLE `sys_resource` (
+  `id` int(11) NOT NULL AUTO_INCREMENT COMMENT '主键,自增',
+  `identity` varchar(100) DEFAULT NULL COMMENT '资源身份标识',
+  `name` varchar(100) DEFAULT NULL COMMENT '资源名称',
+  `url` varchar(200) DEFAULT NULL COMMENT '资源请求地址',
+  `parent_id` int(11) DEFAULT NULL COMMENT '父资源主键ID,若顶级则为0',
+  `parent_ids` varchar(200) DEFAULT NULL COMMENT '资源树,形如:0/7,若顶级为0',
+  `icon` varchar(200) DEFAULT NULL COMMENT '资源图标',
+  `weight` int(11) DEFAULT NULL COMMENT '权重',
+  `resource_type` int(11) DEFAULT NULL COMMENT '资源类型(暂无使用)',
+  `is_resource` tinyint(1) DEFAULT NULL COMMENT '是否是资源(是否可点击触发请求)：0否；1是',
+  `is_show` tinyint(1) DEFAULT NULL COMMENT '是否显示：0不显示；1显示',
+  `status` int(11) DEFAULT NULL COMMENT '状态,-1-删除、 0-禁用， 1-正常',
+  `creator_id` int(11) DEFAULT NULL COMMENT '创建人，如果是同步的数据，则默认为-1L',
+  `create_time` datetime DEFAULT NULL COMMENT '创建时间',
+  `update_id` int(11) DEFAULT NULL COMMENT '更新人',
+  `update_time` datetime DEFAULT NULL COMMENT '更新时间',
+  `remarks` varchar(200) DEFAULT NULL COMMENT '资源描述',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='资源表';
+
 
 -- 国家行政区划表（进行初始化<取高德地图数据>）
 CREATE TABLE `zone`  (

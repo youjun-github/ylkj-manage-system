@@ -63,10 +63,14 @@
                enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false"
                selectByExampleQueryId="false">
         </table>-->
-        <table tableName="zone" domainObjectName="Zone" enableCountByExample="false"
+        <!--<table tableName="zone" domainObjectName="Zone" enableCountByExample="false"
                enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false"
                selectByExampleQueryId="false">
-        </table>
+        </table>-->
+        <table tableName="sys_resource" domainObjectName="SysResource" enableCountByExample="false"
+        enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false"
+        selectByExampleQueryId="false">
+    </table>
 
     </context>
 </generatorConfiguration>

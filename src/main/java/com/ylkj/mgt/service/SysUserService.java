@@ -2,7 +2,9 @@ package com.ylkj.mgt.service;
 
 import com.github.pagehelper.Page;
 import com.ylkj.mgt.core.common.BaseService;
+import com.ylkj.mgt.core.lang.Result;
 import com.ylkj.mgt.entity.SysUser;
+import com.ylkj.mgt.web.args.LoginArgs;
 import com.ylkj.mgt.web.args.SysUserArgs;
 import com.ylkj.mgt.web.mode.SysUserMode;
 
@@ -13,10 +15,16 @@ import com.ylkj.mgt.web.mode.SysUserMode;
 public interface SysUserService extends BaseService<SysUser> {
 
     /**
-     * 分頁查詢用戶
+     * 分页查询用户
      * @param userArgs
      * @return
      */
     Page<SysUserMode> selectByPage(SysUserArgs userArgs);
 
+    /**
+     * 登录
+     * @param loginArgs
+     * @return
+     */
+    Result<SysUserMode> login(LoginArgs loginArgs);
 }

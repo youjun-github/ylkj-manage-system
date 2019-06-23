@@ -51,9 +51,9 @@ public class SysUserMode {
     private String remarks;
 
     public static SysUserMode entity(SysUser sysUser) {
-        SysUserMode factoryMode = new SysUserMode();
-        BeanUtils.copyProperties(sysUser, factoryMode);
-        return factoryMode;
+        SysUserMode userMode = new SysUserMode();
+        BeanUtils.copyProperties(sysUser, userMode);
+        return userMode;
     }
 
     public Integer getId() {

@@ -18,4 +18,14 @@ public class Constant {
      */
     public static final String UTF8 = "UTF-8";
 
+    /**
+     * 验证码位数
+     */
+    public static final int COUNT = 4;
+
+    /**
+     * 登录验证码内容取值
+     */
+    public static final String VER_CODE = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+
 }

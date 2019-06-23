@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ylkj.mgt.mapper.SysResourceMapper">
+  <resultMap id="BaseResultMap" type="com.ylkj.mgt.entity.SysResource">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="identity" jdbcType="VARCHAR" property="identity" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="url" jdbcType="VARCHAR" property="url" />
+    <result column="parent_id" jdbcType="INTEGER" property="parentId" />
+    <result column="parent_ids" jdbcType="VARCHAR" property="parentIds" />
+    <result column="icon" jdbcType="VARCHAR" property="icon" />
+    <result column="weight" jdbcType="INTEGER" property="weight" />
+    <result column="resource_type" jdbcType="INTEGER" property="resourceType" />
+    <result column="is_resource" jdbcType="BIT" property="isResource" />
+    <result column="is_show" jdbcType="BIT" property="isShow" />
+    <result column="status" jdbcType="INTEGER" property="status" />
+    <result column="creator_id" jdbcType="INTEGER" property="creatorId" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="update_id" jdbcType="INTEGER" property="updateId" />
+    <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
+    <result column="remarks" jdbcType="VARCHAR" property="remarks" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    id, identity, name, url, parent_id, parent_ids, icon, weight, resource_type, is_resource, 
+    is_show, status, creator_id, create_time, update_id, update_time, remarks
+  </sql>
+</mapper>
