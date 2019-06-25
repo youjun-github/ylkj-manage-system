@@ -62,7 +62,7 @@ INSERT INTO `sys_user` (`id`, `login_name`, `password`, `nick_name`, `admin`, `e
 
 -- 正式数据
 -- 菜单初始化
-INSERT INTO `sys_resource` (`id`, `identity`, `name`, `url`, `parent_id`, `parent_ids`, `icon`, `weight`, `resource_type`, `is_resource`, `is_show`, `status`, `creator_id`, `create_time`, `update_id`, `update_time`, `remarks`) VALUES ('10', 'sysManage', '系统管理', NULL, NULL, '0', NULL, '1', NULL, '0', '1', '1', '-1', '2019-06-25 22:16:02', NULL, NULL, NULL);
+INSERT INTO `sys_resource` (`id`, `identity`, `name`, `url`, `parent_id`, `parent_ids`, `icon`, `weight`, `resource_type`, `is_resource`, `is_show`, `status`, `creator_id`, `create_time`, `update_id`, `update_time`, `remarks`) VALUES ('10', 'sysManage', '系统管理', NULL, '0', '0', NULL, '1', NULL, '0', '1', '1', '-1', '2019-06-25 22:16:02', NULL, NULL, NULL);
 INSERT INTO `sys_resource` (`id`, `identity`, `name`, `url`, `parent_id`, `parent_ids`, `icon`, `weight`, `resource_type`, `is_resource`, `is_show`, `status`, `creator_id`, `create_time`, `update_id`, `update_time`, `remarks`) VALUES ('11', 'userManage', '用户管理', 'user/page', '10', '10/11', NULL, '1', NULL, '1', '1', '1', '-1', '2019-06-25 22:16:02', NULL, NULL, NULL);
 
 
