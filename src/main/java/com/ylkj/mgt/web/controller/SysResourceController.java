@@ -22,7 +22,7 @@ import java.util.List;
  * @author youjun
  * @create 2019-06-22 15:27
  */
-@Api(value = "资源接口")
+@Api(tags = "资源接口")
 @RestController
 @RequestMapping(value = "/resource")
 public class SysResourceController extends BaseController {
