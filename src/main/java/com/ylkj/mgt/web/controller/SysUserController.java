@@ -7,6 +7,7 @@ import com.ylkj.mgt.core.lang.Result;
 import com.ylkj.mgt.service.SysUserService;
 import com.ylkj.mgt.utils.VerificationCodeUtils;
 import com.ylkj.mgt.web.args.LoginArgs;
+import com.ylkj.mgt.web.args.RegisterArgs;
 import com.ylkj.mgt.web.args.SysUserArgs;
 import com.ylkj.mgt.web.mode.SysUserMode;
 import com.ylkj.mgt.web.mode.VerCode;
@@ -15,13 +16,10 @@ import io.swagger.annotations.ApiImplicitParam;
 import io.swagger.annotations.ApiImplicitParams;
 import io.swagger.annotations.ApiOperation;
 import org.apache.commons.lang3.RandomStringUtils;
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.util.Base64Utils;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 /**
  * @author youjun
@@ -70,6 +68,19 @@ public class SysUserController extends BaseController {
         byte[] bytes = VerificationCodeUtils.drawImage(code);
         verCode.setImg(Base64Utils.encodeToString(bytes));
         return Result.ok(verCode);
+    }
+
+    @PostMapping("/registerVerCode")
+    @ApiOperation(value = "获取注册验证码")
+    public Result<String> registerVerCode(@RequestParam String mobile) {
+        return ok(sysUserService.registerVerCode(mobile));
+    }
+
+    @PostMapping("/register")
+    @ApiOperation(value = "注册")
+    public Result<?> register(@RequestBody RegisterArgs registerArgs) {
+        sysUserService.register(registerArgs);
+        return Result.ok(null);
     }
 
     /**

@@ -1,5 +1,6 @@
 package com.ylkj.mgt.utils;
 
+import com.ylkj.mgt.model.MobileVerificationCode;
 import org.springframework.util.Base64Utils;
 
 import javax.imageio.ImageIO;
@@ -9,14 +10,18 @@ import java.awt.image.BufferedImage;
 import java.io.ByteArrayOutputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.util.Map;
 import java.util.Random;
 import java.util.UUID;
+import java.util.concurrent.ConcurrentHashMap;
 
 /**
  * 生成验证码
  * @author youjun
  */
 public class VerificationCodeUtils {
+    public static final long VER_CODE_VALIDITY = 3 * 60;
+    public static Map<String, MobileVerificationCode> verCodeMap = new ConcurrentHashMap<>();
     private static Random random = new Random();
     private static String IMG_DEFAULT_TYPE = "jpg";//默认图片格式
     private static int IMG_DEFAULT_WIDTH = 300;//图片默认宽带
